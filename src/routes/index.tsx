@@ -4,7 +4,7 @@ import { useAppThemeContext } from "../shared/contexts";
 
 export const AppRoutes = () => {
 
-    const { toggleTheme } = useAppThemeContext();
+    const { toggleTheme } = useAppThemeContext(); //CHAMANDO A FUNÇÃO PRA TROCAR O TEMA AO CLICAR NO BOTÃO
     return (
         /*ROTAS DO PROJETO*/
         <Routes>
