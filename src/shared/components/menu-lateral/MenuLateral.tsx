@@ -1,5 +1,17 @@
-import { Avatar, Divider, Drawer, Icon, List, ListItemButton, ListItemIcon, ListItemText, useTheme } from "@mui/material"
+import {
+    Avatar,
+    Divider,
+    Drawer,
+    Icon,
+    List,
+    ListItemButton,
+    ListItemIcon,
+    ListItemText,
+    useMediaQuery,
+    useTheme
+} from "@mui/material"
 import { Box } from "@mui/system"
+import { useAppDrawerContext } from "../../contexts";
 
 interface IMenuLaterlProps {
     children: React.ReactNode
@@ -7,11 +19,15 @@ interface IMenuLaterlProps {
 
 export const MenuLateral: React.FC<IMenuLaterlProps> = ({ children }) => {
     const theme = useTheme();
+    const smDown = useMediaQuery(theme.breakpoints.down("sm")); //função que retorna um boolean para os brackpoints do MUI, tornando a rederização do tamanho da tela dinãmico para o menu lateral
 
+    const { isDrawerOpen, toggleDrawerOpen } = useAppDrawerContext();
     return (
         <>
-            <Drawer //componente para menu lateral
-                variant="permanent"
+            <Drawer //componente para menu lateral --- um ternário par escolher, se smDown < que 'sm', o menu fica 'temporary', e for maior fica 'permanente'
+                open={isDrawerOpen}
+                variant={smDown ? "temporary" : "permanent"}
+                onClose={toggleDrawerOpen}
             >
                 <Box
                     width={theme.spacing(28)}
@@ -45,7 +61,7 @@ export const MenuLateral: React.FC<IMenuLaterlProps> = ({ children }) => {
                     </Box>
                 </Box>
             </Drawer>
-            <Box height="100vh" marginLeft={theme.spacing(28)}>
+            <Box height="100vh" marginLeft={smDown ? 0 : theme.spacing(28)}>
                 {children}
             </Box>
         </>
