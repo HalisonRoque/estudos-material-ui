@@ -9,7 +9,7 @@ export const AppRoutes = () => {
         /*ROTAS DO PROJETO*/
         <Routes>
             {/*ROTAS 1*/}
-            <Route
+            <Route 
                 path="/pagina-inicial"
                 element={
                     <Button

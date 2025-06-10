@@ -17,7 +17,7 @@ interface IMenuLaterlProps {
     children: React.ReactNode
 };
 
-export const MenuLateral: React.FC<IMenuLaterlProps> = ({ children }) => {
+export const MenuLateral: React.FC<IMenuLaterlProps> = ({ children }) => { 
     const theme = useTheme();
     const smDown = useMediaQuery(theme.breakpoints.down("sm")); //função que retorna um boolean para os brackpoints do MUI, tornando a rederização do tamanho da tela dinãmico para o menu lateral
 
