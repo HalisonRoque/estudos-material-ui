@@ -2,6 +2,7 @@ import { Button } from "@mui/material";
 import { Routes, Route, Navigate } from "react-router-dom";
 import { useAppDrawerContext } from "../shared/contexts";
 import { useEffect } from "react";
+import { Dashboard } from "../pages/dashboard/Dashboard";
 
 export const AppRoutes = () => {
 
@@ -31,15 +32,7 @@ export const AppRoutes = () => {
             {/*ROTAS 1*/}
             <Route 
                 path="/pagina-inicial"
-                element={
-                    <Button
-                        variant="contained"
-                        color="primary"
-                        onClick={toggleDrawerOpen}
-                    >
-                        Teste Drawer
-                    </Button>
-                }
+                element={<Dashboard />}
             />
         </Routes>
     );
