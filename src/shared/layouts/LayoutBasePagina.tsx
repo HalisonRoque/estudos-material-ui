@@ -1,4 +1,4 @@
-import { Icon, IconButton, Theme, ThemeCssVar, Typography, useTheme } from "@mui/material";
+import { Icon, IconButton, Theme, Typography, useTheme } from "@mui/material";
 import { Box, useMediaQuery } from "@mui/system";
 import { useAppDrawerContext } from "../contexts";
 import { ReactNode } from "react";
