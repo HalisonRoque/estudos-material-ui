@@ -35,17 +35,17 @@ export const BarraDeFerramentas: React.FC<IBarraDeFerramentasProps> = ({
             {mostraInputBusca && (
                 <TextField
                     size="small"
-                    value={textoDaBusca}
                     placeholder="Pesquisar..."
-                    onChange={(e) => aoMudarTextDeBusca?.(e.target.value)}
-                    InputProps={{
-                        endAdornment: (
-                            <InputAdornment position="end">
-                                <SearchIcon />
-                            </InputAdornment>
-                        ),
+                    slotProps={{
+                        input: {
+                            startAdornment: (
+                                <InputAdornment position="start">
+                                    <SearchIcon />
+                                </InputAdornment>
+                            ),
+                        },
                     }}
-                />
+              />
             )}
 
             <Box flex={1} display="flex" justifyContent="end">
