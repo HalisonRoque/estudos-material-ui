@@ -55,7 +55,9 @@ export const FerramentasDaListagem: React.FC<IFerramentasDaListagem> = ({
                     variant='contained'
                     onClick={aoClicarEmNovo}
                     endIcon={<Icon>add</Icon>}
-                >{textoBotaoNovo}</Button>
+                >
+                    {textoBotaoNovo}
+                </Button>
             </Box>
 
         </Box>
