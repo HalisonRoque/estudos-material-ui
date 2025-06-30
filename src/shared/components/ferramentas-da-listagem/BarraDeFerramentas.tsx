@@ -2,7 +2,7 @@ import { Box, Button, Icon, Paper, TextField, useTheme } from "@mui/material"
 import SearchIcon from '@mui/icons-material/Search';
 import InputAdornment from '@mui/material/InputAdornment';
 
-interface IBarraDeFerramentasProps {
+interface IFerramentasDaListagem {
     textoDaBusca?: string;
     mostraInputBusca?: boolean;
     aoMudarTextDeBusca?: (novoTexto: string) => void;
@@ -11,7 +11,7 @@ interface IBarraDeFerramentasProps {
     aoClicarEmNovo?: () => void;
 }
 
-export const BarraDeFerramentas: React.FC<IBarraDeFerramentasProps> = ({
+export const FerramentasDaListagem: React.FC<IFerramentasDaListagem> = ({
     textoDaBusca = '',
     mostraInputBusca = false,
     aoMudarTextDeBusca,
@@ -45,7 +45,7 @@ export const BarraDeFerramentas: React.FC<IBarraDeFerramentasProps> = ({
                             ),
                         },
                     }}
-              />
+                />
             )}
 
             <Box flex={1} display="flex" justifyContent="end">
