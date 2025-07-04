@@ -1,4 +1,4 @@
-import { Box, Button, Divider, Icon, Paper, Skeleton, useTheme } from "@mui/material"
+import { Box, Button, Divider, Icon, Paper, Skeleton, Typography, useMediaQuery, useTheme } from "@mui/material"
 
 interface IFerramentasDeDetalheProps {
     textoBotaoNovo?: string;
@@ -42,6 +42,8 @@ export const FerramentasDeDetalhe: React.FC<IFerramentasDeDetalheProps> = ({
     aoClicarEmSalvarEFechar
 }) => {
     const theme = useTheme();
+    const smDown = useMediaQuery(theme.breakpoints.down("sm"));
+    const mdDown = useMediaQuery(theme.breakpoints.down("md"));
 
     return (
         <Box
@@ -66,17 +68,20 @@ export const FerramentasDeDetalhe: React.FC<IFerramentasDeDetalheProps> = ({
 
             {mostrarBotaoDeSalvarCarregando && (<Skeleton width={110} height={60} />)}
 
-            {(mostrarBotaoSalvarEFechar && !mostrarBotaoDeSalvarEFecharCarregando) && (<Button
-                color='primary'
-                disableElevation
-                variant='outlined'
-                onClick={aoClicarEmSalvarEFechar}
-                startIcon={<Icon>save</Icon>}
-            >
-                Salvar e voltar
-            </Button>)}
+            {(mostrarBotaoSalvarEFechar && !mostrarBotaoDeSalvarEFecharCarregando && !smDown && !mdDown) && (
+                <Button
+                    color='primary'
+                    disableElevation
+                    variant='outlined'
+                    onClick={aoClicarEmSalvarEFechar}
+                    startIcon={<Icon>save</Icon>}
+                >
+                    <Typography variant='button' whiteSpace="nowrap" textOverflow="ellipsis" overflow="hidden">
+                        Salvar e fechar
+                    </Typography>
+                </Button>)}
 
-            {mostrarBotaoDeSalvarEFecharCarregando && (<Skeleton width={180} height={60} />)}
+            {(mostrarBotaoDeSalvarEFecharCarregando && !smDown && !mdDown) && (<Skeleton width={180} height={60} />)}
 
             {(mostrarBotaoApagar && !mostrarBotaoDeApagarCarregando) && (<Button
                 color='primary'
