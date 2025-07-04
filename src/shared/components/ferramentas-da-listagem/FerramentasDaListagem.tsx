@@ -1,6 +1,7 @@
 import { Box, Button, Icon, Paper, TextField, useTheme } from "@mui/material"
 import SearchIcon from '@mui/icons-material/Search';
 import InputAdornment from '@mui/material/InputAdornment';
+import { Environment } from '../../environment';
 
 interface IFerramentasDaListagem {
     textoDaBusca?: string;
@@ -35,7 +36,7 @@ export const FerramentasDaListagem: React.FC<IFerramentasDaListagem> = ({
             {mostraInputBusca && (
                 <TextField
                     size="small"
-                    placeholder="Pesquisar..."
+                    placeholder={Environment.INPUT_DE_BUSCA}
                     slotProps={{
                         input: {
                             startAdornment: (
