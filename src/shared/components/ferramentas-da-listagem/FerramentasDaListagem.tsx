@@ -37,6 +37,7 @@ export const FerramentasDaListagem: React.FC<IFerramentasDaListagem> = ({
                 <TextField
                     size="small"
                     placeholder={Environment.INPUT_DE_BUSCA}
+                    onChange={(e) => aoMudarTextDeBusca?.(e.target.value)}
                     slotProps={{
                         input: {
                             startAdornment: (
