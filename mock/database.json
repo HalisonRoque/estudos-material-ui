@@ -2,8 +2,9 @@
     "pessoas": [
         {
             "id": 1,
-            "nome": "halison",
-            "sobrenome": "roque"
+            "email": "halison@gmail.com",
+            "cidade": "Arara",
+            "nomeCompleto": "Halison Roque"
         }
     ]
 } 
