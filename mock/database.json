@@ -9,25 +9,25 @@
         {
             "id": 2,
             "email": "alice@gmail.com",
-            "cidade": "Arara",
+            "cidade": "serraria",
             "nomeCompleto": "Alice Roque"
         },
         {
             "id": 3,
             "email": "liz@gmail.com",
-            "cidade": "Arara",
+            "cidade": "solanea",
             "nomeCompleto": "Liz Roque"
         },
         {
             "id": 4,
             "email": "mary@gmail.com",
-            "cidade": "Arara",
+            "cidade": "remigio",
             "nomeCompleto": "Mary Roque"
         },
         {
             "id": 5,
             "email": "pipoca@gmail.com",
-            "cidade": "Arara",
+            "cidade": "piloes",
             "nomeCompleto": "pipoca Roque"
         }
     ]

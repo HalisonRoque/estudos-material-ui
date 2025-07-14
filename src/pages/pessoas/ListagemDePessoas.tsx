@@ -1,12 +1,13 @@
 import { useEffect, useMemo, useState } from "react";
 import { useSearchParams } from "react-router-dom";
-import { Paper, Table, TableBody, TableCell, TableContainer, TableHead, TableRow } from "@mui/material";
+import { LinearProgress, Paper, Table, TableBody, TableCell, TableContainer, TableFooter, TableHead, TableRow } from "@mui/material";
 
 import { FerramentasDaListagem } from "../../shared/components";
 import { LayoutBasePagina } from "../../shared/layouts";
 import { PessoasService } from "../../shared/services/api/pessoas/PessoasService";
 import { useDebouce } from "../../shared/hooks";
 import { IlistagemPessoa } from "../../shared/services/api/pessoas/interfaces/InterfacesPessoas";
+import { Environment } from "../../shared/environment";
 
 
 export const ListagemDePessoas: React.FC = () => {
@@ -39,6 +40,7 @@ export const ListagemDePessoas: React.FC = () => {
                     }
                 });
         });
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [busca])
 
     return (
@@ -53,7 +55,7 @@ export const ListagemDePessoas: React.FC = () => {
                 />
             }
         >
-            <TableContainer component={Paper} variant="outlined" sx={{m: 1, width: 'auto'}}>
+            <TableContainer component={Paper} variant="outlined" sx={{ m: 1, width: 'auto' }}>
                 <Table>
                     <TableHead>
                         <TableRow>
@@ -71,6 +73,21 @@ export const ListagemDePessoas: React.FC = () => {
                             </TableRow>
                         ))}
                     </TableBody>
+
+                    {totalCount === 0 && !isLoading && (
+                        <caption>
+                            {Environment.LISTAGEM_VAZIA}
+                        </caption>
+                    )}
+
+                    <TableFooter>
+                        {isLoading && (<TableRow>
+                            <TableCell colSpan={3}>
+                                <LinearProgress variant="indeterminate" />
+                            </TableCell>
+                        </TableRow>
+                        )}
+                    </TableFooter>
                 </Table>
             </TableContainer>
         </LayoutBasePagina>

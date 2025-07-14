@@ -12,8 +12,10 @@ const getAll = async (
     page = 1,
     filter = ''
 ): Promise<TPessoasComTotalCount | Error> => {
+    console.log("filter", filter)
     try {
         const urlRelativa = `/pessoas?_page=${page}&_limit=${Environment.LIMITE_DE_LINHAS}&nomeCompleto_like=${filter}`;
+        console.log("url", urlRelativa)
         const { data, headers } = await Api.get(urlRelativa);
 
         if (data) {
